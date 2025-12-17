@@ -1,8 +1,7 @@
-baseURL = ''
+baseURL = 'https://chiefcll.github.io/asonestrategy/'
 languageCode = 'en-us'
 title = 'As One Strategy'
 theme = []
-relativeURLs = true
 
 [params]
   description = "Together We Thrive"
