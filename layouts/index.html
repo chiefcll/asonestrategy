@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ .Site.Title }} - {{ .Site.Params.description }}</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ " css/style.css" | relURL }}">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header class="site-header">
         <div class="container">
             <div class="logo-container">
-                <img src="/images/logo.jpg" alt="As One Strategy Logo" class="logo">
+                <img src="{{ " images/logo.jpg" | relURL }}" alt="As One Strategy Logo" class="logo">
             </div>
             <nav class="main-nav">
                 <ul>
@@ -41,8 +45,11 @@
                         <div class="placeholder-img">Headshot</div>
                     </div>
                     <div class="about-text">
-                        <p>Hannah Lorenzo is the lead consultant at As One Strategy. With a passion for faith-based leadership and business growth, she empowers organizations to reach their full potential.</p>
-                        <p>Focusing on churches and non-profits, Hannah brings years of experience in strategic planning and team development.</p>
+                        <p>Hannah Lorenzo is the lead consultant at As One Strategy. With a passion for faith-based
+                            leadership and business growth, she empowers organizations to reach their full potential.
+                        </p>
+                        <p>Focusing on churches and non-profits, Hannah brings years of experience in strategic planning
+                            and team development.</p>
                     </div>
                 </div>
             </div>
@@ -54,7 +61,8 @@
                 <div class="speaking-grid">
                     <div class="speaking-card">
                         <h3>Leadership in Faith</h3>
-                        <p>Empowering church leaders to manage with business acumen without losing their spiritual mission.</p>
+                        <p>Empowering church leaders to manage with business acumen without losing their spiritual
+                            mission.</p>
                     </div>
                     <div class="speaking-card">
                         <h3>Organizational Health</h3>
@@ -92,7 +100,8 @@
             <div class="container">
                 <h2>Contact Us</h2>
                 <p>Interested in working with As One Strategy? Send us a message.</p>
-                <form action="https://formspree.io/f/xbjnqnov" method="POST" class="contact-form"> <!-- Using a demo Formspree ID or leaving generic -->
+                <form action="https://formspree.io/f/xbjnqnov" method="POST" class="contact-form">
+                    <!-- Using a demo Formspree ID or leaving generic -->
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -118,4 +127,5 @@
         </div>
     </footer>
 </body>
+
 </html>

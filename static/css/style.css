@@ -81,7 +81,7 @@ img {
   padding: 100px 0;
   text-align: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("/images/hero-bg.jpg"); /* Placeholder if user had one, otherwise just color */
+    url("../images/hero-bg.jpg"); /* Placeholder if user had one, otherwise just color */
   background-size: cover;
   background-position: center;
 }

@@ -2,6 +2,7 @@ baseURL = 'http://asonestrategy.com/'
 languageCode = 'en-us'
 title = 'As One Strategy'
 theme = []
+relativeURLs = true
 
 [params]
   description = "Together We Thrive"
