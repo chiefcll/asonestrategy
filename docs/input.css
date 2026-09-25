@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Anchor links land below the sticky header (72px on phones, 104px from md up) */
+  html {
+    scroll-padding-top: 72px;
+  }
+
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: 104px;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-accent;
+  }
+}
+
+@layer components {
+  /* Centered content column: 1248px of content inside the design's 96px gutters */
+  .wrap {
+    @apply mx-auto w-full max-w-[1440px] px-6 md:px-12 xl:px-24;
+  }
+
+  .section-y {
+    @apply py-16 md:py-24 xl:py-32;
+  }
+
+  .eyebrow {
+    @apply font-display text-sm font-bold uppercase tracking-[0.24em] text-brand;
+  }
+
+  .page-title {
+    @apply max-w-[1040px] font-display text-[40px] font-extrabold leading-[1.05] tracking-[-0.02em] md:text-[56px] xl:text-[72px];
+  }
+
+  .lead {
+    @apply max-w-[780px] text-[18px] leading-[1.55] text-body md:text-[20px] xl:text-[22px];
+  }
+
+  .section-title {
+    @apply font-display text-[30px] font-extrabold leading-[1.15] tracking-[-0.01em] md:text-[36px] xl:text-[44px];
+  }
+
+  .item-title {
+    @apply font-display text-[22px] font-bold leading-tight md:text-[26px];
+  }
+
+  .btn {
+    @apply inline-flex h-14 items-center justify-center rounded px-8 font-display text-base font-bold transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-accent text-white hover:bg-accent-hover;
+  }
+
+  .btn-outline {
+    @apply border-2 border-ink text-ink hover:bg-ink hover:text-white;
+  }
+
+  .service-row {
+    @apply grid grid-cols-[48px_minmax(0,1fr)] items-baseline gap-x-4 gap-y-3 py-7 lg:grid-cols-[64px_300px_minmax(0,1fr)] lg:gap-8 lg:py-9 xl:grid-cols-[96px_400px_minmax(0,1fr)];
+  }
+
+  .service-num {
+    @apply font-display text-[18px] font-bold text-brand md:text-[20px];
+  }
+
+  .service-text {
+    @apply col-start-2 text-[17px] leading-[1.6] text-body md:text-[19px] lg:col-start-auto;
+  }
+
+  .team-photo {
+    @apply h-[192px] w-[160px] shrink-0 rounded-lg object-cover 2xl:h-[240px] 2xl:w-[200px];
+  }
+
+  .field-label {
+    @apply font-display text-sm font-bold;
+  }
+
+  .field-input {
+    @apply h-[52px] w-full rounded border border-field bg-white px-4 font-sans text-[17px] text-ink;
+  }
+
+  .field-select {
+    @apply appearance-none bg-no-repeat pr-11;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23141414' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-position: right 16px center;
+    background-size: 18px;
+  }
+
+  /* The hCaptcha widget is a fixed 303px wide; shrink it so it fits the form card on narrow phones */
+  @media (max-width: 399px) {
+    .h-captcha {
+      transform: scale(0.89);
+      transform-origin: left top;
+      margin-bottom: -9px;
+    }
+  }
+
+  @media (max-width: 359px) {
+    .h-captcha {
+      transform: scale(0.75);
+      margin-bottom: -20px;
+    }
+  }
+}

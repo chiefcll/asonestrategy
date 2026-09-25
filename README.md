@@ -1,65 +1,53 @@
 # As One Strategy
 
-Website for [As One Strategy](http://asonestrategy.com/), focused on leadership, business development, and faith-based strategy.
+Website for [As One Strategy](https://asonestrategy.com): organizational development, leadership development,
+curriculum and training design, systems performance review and strategic advisory.
 
-## Prerequisites
+Plain HTML and Tailwind CSS, served by GitHub Pages straight from the `docs/` folder.
 
-- **Hugo Extended**: Version 0.128.0 or later is recommended.
-  - [Installation Guide](https://gohugo.io/installation/)
-- **Dart Sass**: Required for style compilation if SCSS/SASS is used.
-  - [Installation Guide](https://sass-lang.com/install)
-- **Git**: For version control.
+## Requirements
 
-## Installation
+- Node.js 18 or later
+- [pnpm](https://pnpm.io/installation)
 
-1. Clone the repository:
-
-   ```bash
-   git clone <repository-url>
-   cd asonestrategy
-   ```
-
-2. Initialize submodules (if any themes act as submodules):
-
-   ```bash
-   git submodule update --init --recursive
-   ```
-
-## Running Locally
-
-To start the local development server with live reload:
+## Develop
 
 ```bash
-hugo server
+pnpm install
+pnpm start
 ```
 
-Once running, navigate to `http://localhost:1313` in your browser.
+`pnpm start` serves `docs/` with live reload and rebuilds the CSS when you change a class.
 
-## Building for Production
-
-To build the static site (generated files will be in the `public` directory):
+## Build
 
 ```bash
-hugo --minify
+pnpm build
 ```
 
-## Deployment
+This compiles `docs/input.css` into `docs/output.css`. Commit `docs/output.css` together with your HTML changes,
+because GitHub Pages serves the folder as-is with no build step.
 
-The site is configured to automatically deploy to **GitHub Pages** using GitHub Actions.
+## Deploy
 
-- **Workflow File**: `.github/workflows/hugo.yaml`
-- **Trigger**: Pushes to the `main` branch.
+GitHub Pages is set to **Deploy from a branch: `main`, `/docs`**. Everything merged to `main` goes live. The custom
+domain comes from `docs/CNAME`.
 
-### How it works
+DNS for `asonestrategy.com` (Google Workspace MX records stay as they are):
 
-1. You make changes and commit them to the `main` branch.
-2. GitHub Actions kicks off a build job.
-3. Hugo builds the site using the `hugo` command.
-4. The content of the `public` directory is uploaded and deployed to GitHub Pages.
+| Type  | Host  | Value |
+| ----- | ----- | ----- |
+| A     | `@`   | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
+| AAAA  | `@`   | `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153` |
+| CNAME | `www` | `chiefcll.github.io` |
 
-## Configuration
+## Contact form
 
-Main configuration is handled in `hugo.toml`.
+The form in `docs/index.html` posts to [Web3Forms](https://web3forms.com). Submissions are emailed to the address
+the `access_key` is registered to (hello@asonestrategy.com). Spam protection is hCaptcha plus a honeypot field, and
+after sending, visitors land on `docs/thanks.html`.
 
-- **Base URL**: `http://asonestrategy.com/`
-- **Title**: As One Strategy
+## Analytics
+
+Google Analytics 4 (`G-6W5XT0VM94`) runs on both pages. Clicks on elements with a `data-cta` attribute send a
+`cta_click` event, and the thank-you page sends `generate_lead`.

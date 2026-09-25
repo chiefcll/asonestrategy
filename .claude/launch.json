@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "asonestrategy-site",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["http-server", "./docs", "-p", "8139", "-c-1"],
+      "port": 8139
+    }
+  ]
+}
