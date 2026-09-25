@@ -383,7 +383,7 @@ for (const [name, html] of [
 // Generated CSS contains the design tokens and responsive classes
 check(css.length > 0, 'docs/output.css exists');
 check(/#c8283a|200 40 58/i.test(css), 'output.css has the accent color');
-check(css.includes('Source Sans 3'), 'output.css has the body font');
+check(/Source Sans(?:\\)? 3/.test(css), 'output.css has the body font'); // minified as Source Sans\ 3
 check(css.includes('.page-title'), 'output.css has the component classes');
 check(css.includes('.md\\:h-\\[104px\\]'), 'output.css has the responsive header height');
 check(css.includes('.h-captcha'), 'output.css has the hCaptcha sizing rules');
