@@ -417,8 +417,8 @@ Expected: `FAIL (…)` listing `docs/index.html exists`, `docs/thanks.html exist
 
 ```bash
 mkdir -p docs/images
-sips --resampleWidth 640 -s formatOptions 85 "$DESIGN/eeffd6e08d750a39431e33e1c2240fa3.jpg" --out docs/images/logo.jpg
-sips --resampleWidth 400 -s formatOptions 82 "$DESIGN/3125fa9bae8e730ec41c280af86bc860.jpg" --out docs/images/hannah-lorenzo.jpg
+sips --resampleWidth 640 -s formatOptions normal "$DESIGN/eeffd6e08d750a39431e33e1c2240fa3.jpg" --out docs/images/logo.jpg
+sips --resampleWidth 400 -s formatOptions high "$DESIGN/3125fa9bae8e730ec41c280af86bc860.jpg" --out docs/images/hannah-lorenzo.jpg
 cp ../solidtv.dev/docs/images/chris-lorenzo.jpg docs/images/chris-lorenzo.jpg
 ```
 
